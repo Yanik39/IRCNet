@@ -1,0 +1,19 @@
+Package: *
+Pin: origin deb.nodesource.com
+Pin-Priority: 999
+
+Package: *
+Pin: release  a=stable
+Pin-Priority: 700
+
+Package: *
+Pin: release a=buster-backports
+Pin-Priority: 500
+
+Package: *
+Pin: release  a=testing
+Pin-Priority: 300
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 100

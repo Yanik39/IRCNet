@@ -1,2 +1,7 @@
-# IRCNet
-Full featured IRCServer with UnrealIRCd, Atheme-Services and theLounge.
+# Not Ready, Please do not use
+
+# IRCServer
+
+Full featured IRCServer with 
+
+UnrealIRCD, Atheme-Services and theLounge
