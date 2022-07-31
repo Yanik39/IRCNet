@@ -1,8 +1,8 @@
-FROM yanik39/ircnet:base
+FROM		yanik39/ircnet:base
 
-COPY root/ /
+COPY		root/ /
 
-RUN chown -R ircnet:ircnet /home/ircnet /usr/local/ircnet && \
-	chmod +x /IRCNet /help/*.sh
+RUN		chown -R ircnet:ircnet /home/ircnet /usr/local/ircnet && \
+		chmod +x /IRCNet /help/*.sh
 
-ENTRYPOINT ["/IRCNet"]
+ENTRYPOINT	["/IRCNet"]
