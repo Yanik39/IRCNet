@@ -81,8 +81,11 @@ fi
 echo "Fixing permissions"
 /bin/bash /help/fix_permissions.sh &
 
-echo "Creating User account and setting up Oper block"
-/bin/bash /help/theLoungeFirstRun.sh &
+if [[ ! -f "/help/first_run_done" ]]
+then
+	echo "Creating User account and setting up Oper block"
+	/bin/bash /help/theLoungeFirstRun.sh &
+fi
 
 echo ""
 echo "Now, Starting Supervisor for all services"
