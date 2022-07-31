@@ -18,15 +18,15 @@ then
 	echo "Checking Debian updates before First Run"
 	echo "Checking Python PIP updates before First Run"
 	echo "Checking NodeJS, NPM updates before First Run"
-    /bin/bash /help/check_updates.sh
+    	/bin/bash /help/check_updates.sh
 	echo "System is now UpToDate"
 	echo "Checking UID and GID"
-	[ "$uid" -eq "$UID" ] || usermod -u $UID ircnet
-	[ "$gid" -eq "$GID" ] || groupmod -g $GID ircnet
+	[ "$uid" -eq "$UID" ] || usermod -u $UID ircnet &> /dev/null
+	[ "$gid" -eq "$GID" ] || groupmod -g $GID ircnet &> /dev/null
 	echo "Creating symbolic links for Python"
-	ln -s /usr/local/bin/python3.9 /usr/bin/python
-	ln -s /usr/local/bin/python3.9 /usr/bin/python3
-	ln -s /usr/local/bin/python3.9 /usr/bin/python3.9
+	ln -s /usr/local/bin/python3.10 /usr/bin/python
+	ln -s /usr/local/bin/python3.10 /usr/bin/python3
+	ln -s /usr/local/bin/python3.10 /usr/bin/python3.10
 	echo "Setting TimeZone to $TZ"
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 else
@@ -36,31 +36,31 @@ fi
 if [[ ! -d "/home/ircnet/UnrealIRCd" ]]
 then
 	echo "Copying default UnrealIRCd folder"
-    mkdir -p /home/ircnet/UnrealIRCd
+    	mkdir -p /home/ircnet/UnrealIRCd
 	cp -r /usr/local/ircnet/UnrealIRCd /home/ircnet
 fi
 if [[ ! -d "/home/ircnet/Atheme-Services" ]]
 then
 	echo "Copying default Atheme-Services folder"
-    mkdir -p /home/ircnet/Atheme-Services
+    	mkdir -p /home/ircnet/Atheme-Services
 	cp -r /usr/local/ircnet/Atheme-Services /home/ircnet
 fi
 if [[ ! -d "/home/ircnet/theLounge" ]]
 then
 	echo "Creating default theLounge folder"
-    mkdir -p /home/ircnet/theLounge
+    	mkdir -p /home/ircnet/theLounge
 	cp -r /usr/local/ircnet/theLounge /home/ircnet
 fi
 if [[ ! -d "/home/ircnet/Logs" ]]
 then
 	echo "Creating default Logs folder"
-    mkdir -p /home/ircnet/Logs
+    	mkdir -p /home/ircnet/Logs
 fi
 if [[ ! -f "/home/ircnet/Supervisor/supervisord.conf" ]]
 then
 	echo "Copying default Supervisor config file"
 	mkdir -p /home/ircnet/Supervisor
-    cp -r /usr/local/ircnet/Supervisor/supervisord.conf /home/ircnet/Supervisor/supervisord.conf
+    	cp -r /usr/local/ircnet/Supervisor/supervisord.conf /home/ircnet/Supervisor/supervisord.conf
 else
 	echo "Supervisor config is present"
 fi
