@@ -78,14 +78,14 @@ then
 	cp -r /usr/local/ircnet/bashrc /home/ircnet/.bashrc
 fi
 
-echo "Fixing permissions"
-/bin/bash /help/fix_permissions.sh &
-
 if [[ ! -f "/help/first_run_done" ]]
 then
 	echo "Creating User account and setting up Oper block"
 	/bin/bash /help/theLoungeFirstRun.sh &
 fi
+
+echo "Fixing permissions"
+/bin/bash /help/fix_permissions.sh &
 
 echo ""
 echo "Now, Starting Supervisor for all services"
