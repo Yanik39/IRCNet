@@ -13,27 +13,6 @@ echo "Going to check default Files/Folders"
 echo "Defaults Folder is (/usr/local/ircnet)"
 echo ""
 
-if [[ ! -f "/help/first_run_done" ]]
-then
-	echo "Checking Debian updates before First Run"
-	echo "Checking Python PIP updates before First Run"
-	echo "Checking NodeJS, NPM updates before First Run"
-	echo "This can take few minutes..."
-    	/bin/bash /help/check_updates.sh
-	echo "System is now UpToDate"
-	echo "Checking UID and GID"
-	[ "$uid" -eq "$UID" ] || usermod -u $UID ircnet &> /dev/null
-	[ "$gid" -eq "$GID" ] || groupmod -g $GID ircnet &> /dev/null
-	echo "Creating symbolic links for Python"
-	ln -s /usr/local/bin/python3.10 /usr/bin/python
-	ln -s /usr/local/bin/python3.10 /usr/bin/python3
-	ln -s /usr/local/bin/python3.10 /usr/bin/python3.10
-	echo "Setting TimeZone to $TZ"
-	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-else
-	echo "Not First Run, So skipping updates"
-	echo "To update system manually; Please run (/help/check_updates.sh)"
-fi
 if [[ ! -d "/home/ircnet/UnrealIRCd" ]]
 then
 	echo "Copying default UnrealIRCd folder"
@@ -77,11 +56,32 @@ then
 	echo "Copying Default/Custom .bashrc"
 	cp -r /usr/local/ircnet/bashrc /home/ircnet/.bashrc
 fi
-
 if [[ ! -f "/help/first_run_done" ]]
 then
+	echo "Checking Debian updates before First Run"
+	echo "Checking Python PIP updates before First Run"
+	echo "Checking NodeJS, NPM updates before First Run"
+	echo "This can take few minutes..."
+    	/bin/bash /help/check_updates.sh	
+	echo "System is now UpToDate"
+	
+	echo "Checking UID and GID"
+	[ "$uid" -eq "$UID" ] || usermod -u $UID ircnet &> /dev/null
+	[ "$gid" -eq "$GID" ] || groupmod -g $GID ircnet &> /dev/null
+	
+	echo "Creating symbolic links for Python"
+	ln -s /usr/local/bin/python3.10 /usr/bin/python
+	ln -s /usr/local/bin/python3.10 /usr/bin/python3
+	ln -s /usr/local/bin/python3.10 /usr/bin/python3.10
+	
+	echo "Setting TimeZone to $TZ"
+	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+	
 	echo "Creating User account and setting up Oper block"
-	/bin/bash /help/theLoungeFirstRun.sh &
+	/bin/bash /help/ircnetFirstRun.sh
+else
+	echo "Not First Run, So skipping updates"
+	echo "To update system manually; Please run (/help/check_updates.sh)"
 fi
 
 echo "Fixing permissions"
