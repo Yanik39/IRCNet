@@ -11,6 +11,8 @@ hashPassword=$(/usr/bin/mkpasswd -m bcrypt -s $theLounge_PASSWORD)
 }
 EOF
 
-sed -i 's/oper_user_replace/$theLounge_OPER_USER/g' /home/ircnet/unrealircd/conf/unrelaircd.conf
-sed -i 's/oper_pass_replace/$theLounge_OPER_PASSWORD/g' /home/ircnet/unrealircd/conf/unrelaircd.conf
-sed -i 's/oper_port_replace/$theLounge_PORT/g' /home/ircnet/unrealircd/conf/unrelaircd.conf
+/bin/sed -i 's/oper_user_replace/$theLounge_OPER_USER/g' /home/ircnet/UnrealIRCd/conf/unrealircd.conf
+/bin/sed -i 's/oper_pass_replace/$theLounge_OPER_PASSWORD/g' /home/ircnet/UnrealIRCd/conf/unrealircd.conf
+/bin/sed -i 's/oper_port_replace/$theLounge_PORT/g' /home/ircnet/UnrealIRCd/conf/unrealircd.conf
+
+## atheme thelounge unrealircd link passwords and cloak keys
