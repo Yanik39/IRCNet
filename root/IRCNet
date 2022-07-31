@@ -32,7 +32,7 @@ then
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 else
 	echo "Not First Run, So skipping updates"
-	echo "To update system properly; Please run (/help/check_updates.sh)"
+	echo "To update system manually; Please run (/help/check_updates.sh)"
 fi
 if [[ ! -d "/home/ircnet/UnrealIRCd" ]]
 then
