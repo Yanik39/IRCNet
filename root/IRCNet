@@ -18,6 +18,7 @@ then
 	echo "Checking Debian updates before First Run"
 	echo "Checking Python PIP updates before First Run"
 	echo "Checking NodeJS, NPM updates before First Run"
+	echo "This can take few minutes..."
     	/bin/bash /help/check_updates.sh
 	echo "System is now UpToDate"
 	echo "Checking UID and GID"
