@@ -46,3 +46,4 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
           repository: yanik39/ircnet
+          short-description: ${{ github.event.repository.description }}
