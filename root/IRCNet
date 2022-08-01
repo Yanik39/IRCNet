@@ -17,13 +17,12 @@ echo "_		Github Repo: https://github.com/TemhAAhmeT/IRCNet"
 echo "_"
 echo "_"
 echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
-echo "_"
-echo "_"
-echo "_		Going to check default Files/Folders"
-echo "_		Defaults Folder is (/usr/local/ircnet)"
-echo "_"
-echo "_"
-echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
+echo " "
+echo " "
+echo " "
+
+echo "Going to check default Files/Folders"
+echo "Defaults Folder is (/usr/local/ircnet)"
 
 if [[ ! -d "/home/ircnet/UnrealIRCd" ]]
 then
@@ -74,7 +73,7 @@ then
 	echo "Checking Python PIP updates before First Run"
 	echo "Checking NodeJS, NPM updates before First Run"
 	echo "This can take few minutes..."
-    	/bin/bash /help/check_updates.sh	
+    #/bin/bash /help/check_updates.sh	
 	echo "System is now UpToDate"
 	
 	echo "Checking UID and GID"
