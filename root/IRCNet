@@ -3,15 +3,27 @@
 uid=$(id -u ircnet)
 gid=$(id -g ircnet)
 
-echo ""
-echo "Welcome to IRCNet"
-echo ""
-echo "Docker Repo: https://hub.docker.com/r/yanik39/ircnet"
-echo "Github Repo: https://github.com/TemhAAhmeT/IRCNet"
-echo ""
-echo "Going to check default Files/Folders"
-echo "Defaults Folder is (/usr/local/ircnet)"
-echo ""
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
+echo "_"
+echo "_"
+echo "_		Welcome to IRCNet"
+echo "_"
+echo "_"
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
+echo "_"
+echo "_"
+echo "_		Docker Repo: https://hub.docker.com/r/yanik39/ircnet"
+echo "_		Github Repo: https://github.com/TemhAAhmeT/IRCNet"
+echo "_"
+echo "_"
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
+echo "_"
+echo "_"
+echo "_		Going to check default Files/Folders"
+echo "_		Defaults Folder is (/usr/local/ircnet)"
+echo "_"
+echo "_"
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
 
 if [[ ! -d "/home/ircnet/UnrealIRCd" ]]
 then
@@ -87,8 +99,12 @@ fi
 echo "Fixing permissions"
 /bin/bash /help/fix_permissions.sh &
 
-echo ""
-echo "Now, Starting Supervisor for all services"
-echo ""
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
+echo "_"
+echo "_"
+echo "_		Now, Starting Supervisor for all services"
+echo "_"
+echo "_"
+echo "_.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--._.--."
 
 exec /usr/local/bin/python3 /usr/local/bin/supervisord -c /etc/supervisor/supervisord.conf
