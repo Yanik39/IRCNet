@@ -79,8 +79,6 @@ then
 	
 	echo "Creating User account and setting up Oper block"
 	/bin/bash /help/ircnetFirstRun.sh
-	ln -sf /dev/stdout /home/ircnet/Supervisor/thelounge_stdout.log
-	ln -sf /dev/stderr /home/ircnet/Supervisor/thelounge_stderr.log
 else
 	echo "Not First Run, So skipping updates"
 	echo "To update system manually; Please run (/help/check_updates.sh)"
